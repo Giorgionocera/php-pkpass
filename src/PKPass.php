@@ -203,7 +203,7 @@ class PKPass
     {
         // Array is passed as input
         if(is_array($data)) {
-            $this->json = json_encode($data);
+            $this->json = str_replace("\\\"\\\\n\\\"", "\\n", json_encode($data));
 
             return true;
         }
